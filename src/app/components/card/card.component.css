@@ -1,0 +1,9 @@
+.video-icon {
+    opacity: .7;
+    transition: 200ms;
+    font-size: 2px;
+}
+.bg-image:hover .video-icon, .bg-image{
+    opacity: 100%;
+    cursor: pointer;
+}

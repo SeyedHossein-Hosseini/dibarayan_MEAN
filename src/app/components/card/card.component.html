@@ -1,0 +1,37 @@
+<div class="">
+  <section class="mx-auto my-1" style="max-width: 23rem">
+    <div class="card">
+      <div
+        class="bg-image hover-overlay ripple position-relative"
+        data-mdb-ripple-color="light"
+      >
+        <app-video-player [videoBlob]="videoBlob"></app-video-player>
+        <!-- <img src="../../../assets/black.png" class="img-fluid" />
+        <img
+          src="../../../assets/video94.png"
+          class="video-icon img-fluid position-absolute top-50 start-50 translate-middle"
+        /> -->
+      </div>
+      <div class="card-body">
+        <h4 class="card-title font-weight-bold">
+          <p class="card-text" style="font-size: 18px">
+            <b>Title:</b> {{ title }}
+          </p>
+          <p class="card-text" style="font-size: 14px">
+            <b>Video length:</b> {{ videoTime }}
+          </p>
+          <p class="d-none">{{ videoId }}</p>
+
+          <!-- <button class="btn btn-primary" (click)="showVideo({title})">
+            <img
+              style="font-size: 5px"
+              src="../../../assets/icons8-eye-24.png"
+              alt="preview video"
+            />
+            Watch Video
+          </button> -->
+        </h4>
+      </div>
+    </div>
+  </section>
+</div>

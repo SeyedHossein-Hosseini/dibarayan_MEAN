@@ -1,0 +1,59 @@
+<div class="vh-100 d-flex justify-content-center align-items-center shadow-lg">
+  <div class="container">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12 col-md-8 col-lg-6">
+        <div class="card bg-white">
+          <div class="card-body p-5">
+            <form class="mb-3 mt-md-4">
+              <h2 class="fw-bold mb-5 text-uppercase text-center">
+                Login Page
+              </h2>
+              <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="username"
+                  placeholder="john Doe"
+                  [(ngModel)]="username"
+                  name="name"
+                />
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="password"
+                  [(ngModel)]="password"
+                  name="password"
+                  placeholder="*******"
+                />
+              </div>
+
+              <div class="d-grid mt-5">
+                <button
+                  class="btn btn-outline-dark"
+                  type="button"
+                  (click)="login({username, password})"
+                >
+                  Login
+                </button>
+              </div>
+            </form>
+            <div>
+              <p class="mb-3 serverMessage text-center text-danger">
+                {{ errorMessage }}
+              </p>
+              <p class="mb-0 text-center">
+                Don't have an account?
+                <a routerLink="/signup" class="text-primary fw-bold">Sign Up</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+

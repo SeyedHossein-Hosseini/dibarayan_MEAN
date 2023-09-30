@@ -1,0 +1,70 @@
+<div id="my-app">
+  <div class="header">
+    <h1>Record video Page</h1>
+    <h1>
+      <button class="btn btn-primary" routerLink="/videos-list">
+        Video List page
+      </button>
+    </h1>
+    <button class="btn btn-primary" routerLink="/login">sign out</button>
+  </div>
+
+  <div class="row">
+    <div class="col-3 col-s-3 menu">
+      <ul>
+        <li id="videoTimer" *ngIf="isVideoRecording && !videoBlobUrl">
+          Time: {{ videoRecordedTime }}
+        </li>
+        <li
+          *ngIf="!isVideoRecording && !videoBlobUrl"
+          (click)="startVideoRecording()"
+        >
+          Start Recording
+        </li>
+        <li
+          *ngIf="isVideoRecording && !videoBlobUrl"
+          (click)="stopVideoRecording()"
+        >
+          Stop Recording
+        </li>
+        <li
+          *ngIf="!isVideoRecording && videoBlobUrl"
+          (click)="clearVideoRecordedData()"
+        >
+          Clear Video
+        </li>
+        <li
+          class=""
+          *ngIf="!isVideoRecording && videoBlobUrl"
+          (click)="uploadVideo()"
+        >
+          Upload Video
+        </li>
+        <li class="bg-success" *ngIf="serverResponse">{{ serverResponse }}</li>
+
+      </ul>
+    </div>
+
+    <div class="col-7 col-s-9">
+      <label for="basic-url" class="form-label px-2"
+        ><b>Video Title:</b>
+      </label>
+      <div class="input-group mb-3 p-2">
+        <span class="input-group-text" id="basic-addon3"></span>
+        <input
+          type="text"
+          class="form-control"
+          name="title"
+          [(ngModel)]="videoTitle"
+        />
+      </div>
+
+      <video #videoElement>
+        <source
+          *ngIf="!isVideoRecording && videoBlobUrl"
+          [src]="videoBlobUrl"
+        />
+      </video>
+    </div>
+  </div>
+</div>
